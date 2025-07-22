@@ -1,7 +1,7 @@
 const headingGroup = document.querySelector('.heading-group');
-const popup = document.querySelector('.popup');
-const overlay = document.querySelector('.mobile-overlay');
-const overlayTop = document.querySelector('.mobile-top');
+const popup = document.getElementById('popup-message');
+const overlay = document.getElementById('mobile-overlay');
+const overlayTop = document.getElementById('mobile-top');
 
 const popupMessages = [
   'Catch me if you can!',
@@ -58,6 +58,6 @@ overlay.addEventListener('click', (e) => {
 document.getElementById('gallery-btn').addEventListener('click', () => {
   document.getElementById('gallery-btn').style.transform = 'scale(1.5)';
   setTimeout(() => {
-    window.location.href = "#gallery"; // Link to your gallery section/page
+    window.location.href = "#gallery"; // You can change to a real page or section
   }, 500);
 });
