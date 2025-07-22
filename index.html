@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scroll Me Softly</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Squeeze&family=Special+Elite&display=swap" rel="stylesheet" />
+
+  <!-- Your CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Background Video -->
+  <video autoplay loop muted playsinline id="bg-video">
+    <source src="linmy.mp4" type="video/mp4" />
+    Your browser does not support HTML5 video.
+  </video>
+
+  <!-- Main Heading -->
+  <div id="main-heading-container">
+    <h1 id="main-heading">
+      <span class="line1">ScRoLl Me SoFtLy</span><br />
+      <span class="line2">YoU aRe In My SpAcE</span>
+    </h1>
+  </div>
+
+  <!-- Blinking Pop-up Message -->
+  <div id="popup-message">Catch me if you can!</div>
+
+  <!-- Fullscreen Overlay for Small Screens -->
+  <div id="mobile-overlay">
+    <div class="top-half">
+      <h1>ScRoLl Me SoFtLy<br /><span>You Are In My Space</span></h1>
+    </div>
+    <div class="bottom-half">
+      <button class="option-btn">Gallery</button>
+      <button class="option-btn">About</button>
+      <button class="option-btn">Inspiring</button>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
