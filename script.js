@@ -1,7 +1,7 @@
-const headingGroup = document.querySelector('.heading-group');
+const heading = document.getElementById('main-heading');
 const popup = document.getElementById('popup-message');
 const overlay = document.getElementById('mobile-overlay');
-const overlayTop = document.getElementById('mobile-top');
+const overlayTop = overlay.querySelector('.top-half');
 
 const popupMessages = [
   'Catch me if you can!',
@@ -12,52 +12,55 @@ const popupMessages = [
   'Oops, I jumped!'
 ];
 
-let isMobile = window.innerWidth <= 900;
+const isMobile = window.innerWidth <= 900;
 
 function randomPosition() {
   const vw = window.innerWidth;
   const vh = window.innerHeight;
-  const left = Math.random() * (vw - 150);
-  const top = Math.random() * (vh - 100);
+  const left = Math.random() * (vw - 200);
+  const top = Math.random() * (vh - 150);
   return { top, left };
 }
 
-headingGroup.addEventListener('click', () => {
+heading.addEventListener('click', () => {
   if (isMobile) {
     overlay.style.display = 'flex';
-    overlayTop.innerText = popupMessages[Math.floor(Math.random() * popupMessages.length)];
+    overlayTop.querySelector('h1').innerText = popupMessages[Math.floor(Math.random() * popupMessages.length)];
     return;
   }
 
   const { top, left } = randomPosition();
-  headingGroup.style.top = `${top}px`;
-  headingGroup.style.left = `${left}px`;
+  heading.style.position = 'absolute';
+  heading.style.top = `${top}px`;
+  heading.style.left = `${left}px`;
 
   const msg = popupMessages[Math.floor(Math.random() * popupMessages.length)];
   popup.innerText = msg;
-  popup.style.top = `${top - 40}px`;
-  popup.style.left = `${left + 50}px`;
   popup.style.display = 'block';
+  popup.style.top = `${top - 30}px`;
+  popup.style.left = `${left + 40}px`;
 
   setTimeout(() => {
-    headingGroup.style.top = '50%';
-    headingGroup.style.left = '50%';
-    headingGroup.style.transform = 'translate(-50%, -50%)';
+    heading.style.top = '50%';
+    heading.style.left = '50%';
+    heading.style.transform = 'translate(-50%, -50%)';
     popup.style.display = 'none';
   }, 2000);
 });
 
-// Optional: Close mobile overlay when clicking outside buttons
+// Optional: Close overlay when clicked outside
 overlay.addEventListener('click', (e) => {
   if (e.target === overlay) {
     overlay.style.display = 'none';
   }
 });
 
-// Optional: Zoom effect for Gallery button
+// Gallery Button Zoom
 document.getElementById('gallery-btn').addEventListener('click', () => {
-  document.getElementById('gallery-btn').style.transform = 'scale(1.5)';
+  const btn = document.getElementById('gallery-btn');
+  btn.style.transform = 'scale(1.3)';
   setTimeout(() => {
-    window.location.href = "#gallery"; // You can change to a real page or section
-  }, 500);
+    btn.style.transform = 'scale(1)';
+    window.location.href = "#gallery"; // Replace with actual page later
+  }, 400);
 });
