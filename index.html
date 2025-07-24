@@ -2,130 +2,47 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Jumping Heading Page</title>
-  <style>
-    body, html {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      overflow: hidden;
-      font-family: 'Squeeze', sans-serif;
-      background: #000;
-      color: white;
-    }
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scrolls of Delay</title>
 
-    .video-bg {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100vw;
-      height: 100vh;
-      object-fit: cover;
-      z-index: -1;
-    }
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Squeeze&family=Special+Elite&display=swap" rel="stylesheet" />
 
-    .heading-group {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 2.5rem;
-      text-transform: capitalize;
-      transition: all 0.3s ease;
-      cursor: pointer;
-      text-align: center;
-    }
-
-    .popup {
-      position: absolute;
-      background: rgba(255, 255, 255, 0.8);
-      color: black;
-      padding: 10px 15px;
-      border-radius: 10px;
-      font-size: 1rem;
-      display: none;
-      z-index: 100;
-    }
-
-    /* Mobile Overlay */
-    .mobile-overlay {
-      display: none;
-      position: fixed;
-      top: 0; left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: rgba(0, 0, 0, 0.9);
-      z-index: 999;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .mobile-top {
-      font-size: 2rem;
-      margin-top: 40px;
-      text-align: center;
-    }
-
-    .mobile-bottom {
-      width: 100%;
-      display: flex;
-      justify-content: space-around;
-      margin-bottom: 50px;
-    }
-
-    .mobile-btn {
-      width: 90px;
-      height: 90px;
-      background: white;
-      color: black;
-      font-weight: bold;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border-radius: 10px;
-      transition: transform 0.3s ease;
-      cursor: pointer;
-    }
-
-    .mobile-btn:hover {
-      transform: scale(1.1);
-    }
-
-    @media (max-width: 900px) {
-      .heading-group {
-        font-size: 2rem;
-        padding: 0 20px;
-      }
-    }
-  </style>
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
   <!-- Background Video -->
-  <video class="video-bg" autoplay muted loop playsinline>
-    <source src="your-video.mp4" type="video/mp4" />
+  <video autoplay loop muted playsinline id="bg-video">
+    <source src="linmy.mp4" type="video/mp4" />
     Your browser does not support HTML5 video.
   </video>
 
-  <!-- Heading -->
-  <div class="heading-group">Scroll Me Softly, You Are In My Space</div>
+  <!-- Main Heading -->
+  <div id="main-heading">
+    <h1>
+      <span class="line1">ScRoLl Me SoFtLy</span><br />
+      <span class="line2">YoU aRe In My SpAcE</span>
+    </h1>
+  </div>
 
-  <!-- Floating Message -->
-  <div class="popup" id="popup-message"></div>
+  <!-- Pop-up Message -->
+  <div id="popup-message">Catch me if you can!</div>
 
-  <!-- Mobile Fullscreen Overlay -->
-  <div class="mobile-overlay" id="mobile-overlay">
-    <div class="mobile-top" id="mobile-top">Catch me if you can!</div>
-    <div class="mobile-bottom">
-      <div class="mobile-btn" id="gallery-btn">Gallery</div>
-      <div class="mobile-btn">About</div>
-      <div class="mobile-btn">Inspiring</div>
+  <!-- Overlay for Mobile -->
+  <div id="mobile-overlay">
+    <div class="top-half">
+      <h1>ScRoLl Me SoFtLy<br /><span>You Are In My Space</span></h1>
+    </div>
+    <div class="bottom-half">
+      <button class="option-btn" id="gallery-btn">Gallery</button>
+      <button class="option-btn">About</button>
+      <button class="option-btn">Inspiring</button>
     </div>
   </div>
 
-  <!-- Link to JavaScript file -->
+  <!-- JS -->
   <script src="script.js"></script>
-
 </body>
 </html>
