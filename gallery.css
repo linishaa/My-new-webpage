@@ -6,6 +6,7 @@ body, html {
   overflow-x: hidden;
 }
 
+/* Background Video */
 .video-background {
   position: fixed;
   top: 0;
@@ -22,6 +23,7 @@ video {
   object-fit: cover;
 }
 
+/* Gallery Container */
 .gallery-container {
   display: flex;
   flex-direction: column;
