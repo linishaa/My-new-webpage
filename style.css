@@ -116,3 +116,41 @@ video#bgVideo {
     transform: scale(1.2);
   }
 }
+/* GALLERY PAGE STYLES */
+.gallery-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow-y: auto;
+  z-index: 1;
+}
+
+.gallery-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  padding: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.gallery-grid img {
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+  transition: transform 0.3s;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.05);
+}
